@@ -16,7 +16,7 @@ export function Screen({ title, onBack, children, style, ...props }: ScreenProps
     <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
       <View style={[styles.container, style]} {...props}>
         {(title || onBack) && (
-          <View style={[styles.header, { marginBottom: spacing.md }]}>
+          <View style={[styles.header, { marginBottom: spacing.md, borderBottomColor: colors.border }]}>
             {onBack ? (
               <Pressable onPress={onBack} hitSlop={12}>
                 <Text style={{ color: colors.primary, fontSize: typography.body, fontWeight: '600' }}>
@@ -55,5 +55,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 8,
   },
-  header: {},
+  header: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    paddingBottom: 12,
+  },
 });
