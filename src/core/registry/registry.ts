@@ -1,12 +1,13 @@
 import { placeholderMiniApp } from '@/features/placeholder';
 import { todoMiniApp } from '@/features/todo';
+import { workoutMiniApp } from '@/features/workout';
 
 import type { MiniAppDefinition } from './types';
 
 /**
  * Merkezi plugin listesi — yeni app eklemek için buraya 1 satır yeter.
  */
-export const MINI_APPS: MiniAppDefinition[] = [placeholderMiniApp, todoMiniApp];
+export const MINI_APPS: MiniAppDefinition[] = [placeholderMiniApp, todoMiniApp, workoutMiniApp];
 
 export function getMiniAppById(id: string): MiniAppDefinition | undefined {
   return MINI_APPS.find((app) => app.id === id && app.enabled);
